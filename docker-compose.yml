@@ -2,6 +2,7 @@
 
 services:
   frontend:
+    image: madhavbohra09/trustwise-frontend:latest
     build: ./ai_analysis_frontend
     ports:
       - "3000:3000"
@@ -11,6 +12,9 @@ services:
       - app-network
 
   backend:
+  # The image name is trustwise_task_backend:latest
+    image: madhavbohra09/trustwise-backend:latest
+  # if image doesn't exists, build the backend from the Dockerfile in the ai_analysis_backend directory
     build: ./ai_analysis_backend
     ports:
       - "8001:8001"
@@ -22,8 +26,6 @@ services:
       DB_HOST : "db"
       DB_PORT : "5432"
       DB_NAME : "trustwise"
-      HUGGINGFACE_API_KEY : "placeholders"
-      GOOGLE_API_KEY : "placeholders" 
     env_file:
       - .env  # Loads only Hugging Face and Gemini API keys from the .env file
     networks:

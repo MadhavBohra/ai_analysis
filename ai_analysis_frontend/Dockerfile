@@ -1,5 +1,5 @@
 # Use official Node.js image as the base image
-FROM node:22
+FROM node:22-alpine
 
 
 # Note to self

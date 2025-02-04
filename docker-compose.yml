@@ -1,0 +1,49 @@
+
+
+services:
+  frontend:
+    build: ./ai_analysis_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build: ./ai_analysis_backend
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+    environment:
+      DB_USER : "postgres"
+      DB_PASSWORD : "postgres"
+      DB_HOST : "db"
+      DB_PORT : "5432"
+      DB_NAME : "trustwise"
+      HUGGINGFACE_API_KEY : "placeholders"
+      GOOGLE_API_KEY : "placeholders" 
+    env_file:
+      - .env  # Loads only Hugging Face and Gemini API keys from the .env file
+    networks:
+      - app-network
+
+  db:
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:

@@ -1,0 +1,16 @@
+.env
+keys.txt
+
+#frontend 
+ai_analysis_frontend/node_modules
+ai_analysis_frontend/.next
+
+
+#backend
+ai_analysis_backend/__pycache__
+ai_analysis_backend/env
+ai_analysis_backend/.env
+ai_analysis_backend/test.py
+ai_analysis_backend/test.txt
+
+=

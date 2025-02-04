@@ -1,0 +1,389 @@
+html{
+    scrollbar-width: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+
+}
+
+.master-container {
+    min-height: 100vh;  /* Ensures full screen coverage */
+    width: 100vw;       /* Full width */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    background-color: #131313;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: "Montserrat", serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    
+
+  }
+
+.heading{
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.container{
+    width: 96%;
+    display: flex;
+    align-items: stretch;
+    /* justify-content: stretch; */
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+
+    
+}
+
+#history-section {
+    width: 45%;
+    border-radius: 20px; /* Softer, more modern rounded corners */
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b); /* Subtle gradient for depth */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Improved shadow for better depth */
+    border: 1px solid #333; /* Subtle border for definition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* height: 400px; */
+    overflow: hidden;
+    justify-content: flex-start;
+    /* height: %; */
+}
+
+/* Hover effect */
+#history-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#prompt-section {
+    width: 100%;
+    /* height: 400px; */
+    border-radius: 20px; /* Softer, more modern rounded corners */
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b); /* Subtle gradient for depth */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Improved shadow for better depth */
+    border: 1px solid #333; /* Subtle border for definition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 30px;
+    justify-content: center;
+
+
+}
+
+#prompt-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+  
+.label {
+    font-size: 26px;
+    font-weight: bold;
+    width: 93%;
+    text-align: left;
+    margin: 10px;
+
+  }
+  
+  .input-box {
+    padding: 20px;
+    width: 90%;
+    /* height: 100%; */
+    /* padding: 50px; */
+    background-color: #3e3e3e;
+    border: 1px solid #353535;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    resize: none;
+    flex: 1;
+  }
+  
+  .analyze-button {
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    /* margin: 40px; */
+    margin: 10px;
+  }
+  
+  .analyze-button:hover {
+    background-color: #0056b3;
+  }
+
+
+  .history-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Enables smooth horizontal scrolling */
+    padding: 10px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 #1f1f1f;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    white-space: nowrap; /* Prevents new lines */
+    width: 100%; /* Ensures full width */
+    max-width: 100%; /* Prevents overflow */
+    align-items: flex-start; /* Ensures items align at the top */
+    justify-content: flex-start; /* Aligns items to the LEFT */
+    overflow-y: hidden; /* Hides vertical scrollbar */
+    /* margin: -15px; */
+    flex-grow: 1; /* Allows container to grow */
+}
+
+.history-container h4{
+    width: 100%;
+    text-align: center;
+}
+
+.history-card {
+    min-width: 250px;
+    max-width: 250px;
+    flex: 0 0 auto; /* Prevents shrinking */
+    border-radius: 10px;
+    background-color: #3e3e3e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    white-space: normal;
+    text-align: left;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.history-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#chart-section{
+    width: 45%;
+    border-radius: 20px; /* Softer, more modern rounded corners */
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b); /* Subtle gradient for depth */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Improved shadow for better depth */
+    border: 1px solid #333; /* Subtle border for definition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* height: 500px; */
+
+
+}
+
+#response-section{
+    width: 100%;
+    /* height: 500px; */
+    border-radius: 20px; /* Softer, more modern rounded corners */
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b); /* Subtle gradient for depth */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Improved shadow for better depth */
+    border: 1px solid #333; /* Subtle border for definition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 30px;
+    justify-content: flex-start;
+    height: auto;
+
+}
+
+
+
+#chart-section h3{
+    margin: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+
+.red-text {
+    color: rgb(68, 183, 68);
+    font-weight: bold;
+}
+
+
+#generate-button {
+    width: 20%;
+    padding: 10px;
+    background-color: #3ab01d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 40px;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  #generate-button:hover{
+    background-color: #2e7f14;
+    transform: scale(1.02);
+
+  }
+
+  .markdown-container {
+    padding: 15px;
+    background-color: #131313; /* Dark background */
+    border: 1px solid #252525; /* Subtle border */
+    color: #f1f1f1; /* Light text */
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    width: 90%;
+    max-width: 100%;
+    word-wrap: break-word;
+    flex: 1;
+    overflow: hidden;
+    max-height: 700px;
+}
+
+/* Style Markdown Headings */
+.markdown-container h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffcc00; /* Golden Yellow */
+}
+
+.markdown-container h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff9900; /* Orange */
+}
+
+.markdown-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6600; /* Dark Orange */
+}
+
+/* Style Lists */
+.markdown-container ul {
+    padding-left: 20px;
+}
+
+.markdown-container li {
+    margin-bottom: 5px;
+    list-style-type: "⚡"; /* Custom bullet */
+}
+
+/* Code Blocks */
+.markdown-container pre {
+    background-color: #222;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #f8f8f2; /* Light text */
+    font-family: "Courier New", monospace;
+}
+
+/* Inline Code */
+.markdown-container code {
+    font-family: "Courier New", monospace;
+    background-color: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ffcc00; /* Golden text */
+}
+
+/* Blockquote */
+.markdown-container blockquote {
+    border-left: 4px solid #ffcc00;
+    padding-left: 10px;
+    margin-left: 10px;
+    color: #dcdcdc;
+    font-style: italic;
+}
+
+/* Horizontal Line */
+.markdown-container hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+
+
+.typing-container {
+    overflow: hidden; /* Hides the text initially */
+    height: 0%;  /* Start with zero height */
+    opacity: 0;
+    padding: 10px;
+
+    /* Animation duration is 4 seconds*/
+    /* Steps function divides the animation into 50 steps */
+    animation: none;
+
+
+}
+
+.typing-container.animate {
+    animation: revealText 4s steps(50, end) forwards;
+    overflow: auto;
+}
+
+
+/* Scrollbar Styling */
+.typing-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.typing-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.typing-container::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Typing effect using height expansion */
+@keyframes revealText {
+    from {
+        height: 0%;
+        opacity: 0;
+    }
+    to {
+        height: 100%;  /* Adjust based on content size */
+        opacity: 1;
+    }
+}
+
+
+.history-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ffcc00, #ff5733);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.history-button:hover {
+    background: linear-gradient(45deg, #ff5733, #ffcc00);
+    transform: scale(1.05);
+}

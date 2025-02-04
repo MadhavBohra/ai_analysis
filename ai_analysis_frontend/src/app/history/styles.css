@@ -1,0 +1,102 @@
+/* Apply styles to the whole page */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #131313;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Master Container */
+.master-container {
+    min-height: 100vh;  /* Ensures full-screen coverage */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #131313;
+    padding: 20px;
+    overflow-y: auto;  /* Enable smooth vertical scrolling */
+}
+
+/* Smooth Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ffcc00, #ff5733);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 5px;
+}
+/* Table Styling */
+.history-table {
+    width: 100%;
+    max-width: 90%; /* Keeps the table responsive */
+    border-collapse: collapse;
+    background-color: #111; /* Dark background */
+    color: white;
+    font-family: "Arial", sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.history-table th, .history-table td {
+    padding: 12px;
+    border: 1px solid #444; /* Dark border */
+    text-align: left;
+}
+
+.history-table th {
+    background-color: #222; /* Slightly lighter for header */
+    color: #ffcc00; /* Highlighted headers */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.history-table tr:nth-child(even) {
+    background-color: #1a1a1a; /* Alternate row color */
+}
+
+.history-table tr:hover {
+    background-color: #333; /* Highlight row on hover */
+    transition: 0.3s ease;
+}
+
+/* Emotion List */
+.history-table ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.history-table li {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #ffcc00; /* Emotions in yellow */
+    margin-bottom: 3px;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ffcc00, #ff5733);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    background: linear-gradient(45deg, #ff5733, #ffcc00);
+    transform: scale(1.05);
+}
